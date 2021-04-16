@@ -36,4 +36,3 @@ settings:
             - ["services", "./src/services"]
             - ["utils", "./src/utils"]
             - ["ui", "./src/ui"]
-            - ["utils", "./helpers"]
