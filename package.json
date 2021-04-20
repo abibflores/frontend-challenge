@@ -9,7 +9,8 @@
         "clean": "rm -rf dist/*; rm -rf .cache",
         "gendocs": "jsdoc -r -c .jsdoc.json src",
         "prettify": "prettier --write src",
-        "lint": "eslint --fix src; stylelint src/**/*.scss --fix"
+        "lint": "eslint --fix src; stylelint src/**/*.scss --fix",
+        "test": "node ./test/OrderList/orderList.test.js"
     },
     "repository": {
         "type": "git",
