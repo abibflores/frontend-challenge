@@ -1,5 +1,9 @@
-export default function DirectoryList({ offerList, ...props }) {
-    log.debug("Here is your offers list", offerList);
+import { OfferCard } from "./OfferCard";
 
-    return <></>;
-}
+export const DirectoryList = ({ offerList, ...props }) => (
+    <section className="DirectoryList">
+        {offerList.map(offer => (
+            <OfferCard {...offer} key={offer.id} />
+        ))}
+    </section>
+);
