@@ -1,15 +1,21 @@
-import DirectoryList from "ui/components/DirectoryList";
+import { DirectoryList } from "ui/components/DirectoryList";
+import { fetchOffersList } from "./utils/index";
 
-const fetchOffersList = () => {
-    return [];
-};
+import "./index.scss";
 
 export default function App() {
+    const [offerList, setOfferList] = useState([]);
+    useEffect(() => {
+        fetchOffersList().then(resp => {
+            if (resp.success) {
+                const { data } = resp;
+                setOfferList(data);
+            }
+        });
+    }, []);
     return (
         <>
-            <p class="py-4 text-lg text-center">Start here :) Good luck!</p>
-
-            <DirectoryList offerList={fetchOffersList()} />
+            <DirectoryList offerList={offerList} />
         </>
     );
 }
