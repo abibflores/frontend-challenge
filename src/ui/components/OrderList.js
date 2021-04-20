@@ -8,13 +8,13 @@ export const OrderList = ({ handleClick }) => (
                 className="OrderList__Button"
                 type="button"
                 onClick={() => handleClick("ascending")}>
-                0% - 100%
+                0 - 100 %
             </button>
             <button
                 className="OrderList__Button"
                 type="button"
                 onClick={() => handleClick("descending")}>
-                100% - 0%
+                100 - 0 %
             </button>
         </div>
     </div>
