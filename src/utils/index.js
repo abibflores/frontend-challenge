@@ -4,3 +4,9 @@ export const fetchOffersList = async () => {
     );
     return await RESPONSE.json();
 };
+
+export const OrderOffertList = (list, order = "ascending") => {
+    const DESCENDING_MODE_LIST = list.sort((a, b) => a.discount - b.discount);
+    if (order === "ascending") return DESCENDING_MODE_LIST;
+    return DESCENDING_MODE_LIST.reverse();
+};
