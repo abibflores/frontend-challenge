@@ -2,6 +2,7 @@ import { DirectoryList } from "ui/components/DirectoryList";
 import { fetchOffersList } from "./utils/index";
 import { OrderList } from "ui/components/OrderList";
 import "./index.scss";
+import { Spinner } from "./ui/components/Spinner";
 
 export default function App() {
     const [offerList, setOfferList] = useState([]);
@@ -19,7 +20,11 @@ export default function App() {
     return (
         <>
             <OrderList handleClick={setOrder} />
-            <DirectoryList offerList={offerList} order={order} />
+            {offerList.length > 0 ? (
+                <DirectoryList offerList={offerList} order={order} />
+            ) : (
+                <Spinner />
+            )}
         </>
     );
 }
